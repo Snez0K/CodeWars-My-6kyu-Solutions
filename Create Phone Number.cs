@@ -16,8 +16,9 @@ public class Kata
   public static string CreatePhoneNumber(int[] numbers)
   {
     string s = string.Join("", numbers);
-    Regex regex = new Regex("([0-9]{3})([0-9]{3})([0-9]{4})");
-    return "(" + regex.Match(s).Groups[1].Value + ") " + regex.Match(s).Groups[2].Value + "-" + regex.Match(s).Groups[3].Value;
+    Regex regex = new Regex("([0-9]{3})([0-9]{3})([0-9]{4})"); 
+    var match = regex.Match(s);
+    return "(" + match.Groups[1].Value + ") " + match.Groups[2].Value + "-" + match.Groups[3].Value;
   }
 }
 
