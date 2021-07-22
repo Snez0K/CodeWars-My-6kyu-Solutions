@@ -19,3 +19,17 @@ The list of separators is the following:
 
 for Italian numbers: " ", ".", ""
 for US numbers: " ", ".", "", "-"*/
+
+string result = "www.codewars.com/katas/?page=1#about";
+            //Regex regex = new Regex(@"\#.+");
+            Regex regex = new Regex(@"^[1][ .-]|^0039[ .-]|^+39[ .-]");
+            Regex back = new Regex(@"[ .-][0-9]{3}[ .-][0-9]{3}[ .-][0-9]{4}");
+            Regex replace = new Regex(@"[0-9]");
+
+            //string boy = regex.Match(result).Success ? back.Match(result).Success ? Regex.Replace(result, replace ) : "DoubleGay" : "Gay";
+
+            string boy = regex.Match(result).Success ? back.Match(result).Success ? result. : "DoubleGay" : "Gay";
+            //string boy = regex.Match(result).Success ? result.Replace(regex.Match(result).Value, "") : "Gay";
+
+            //string boy = regex.Match(result).Value;
+            //Console.WriteLine(boy);
